@@ -1,0 +1,92 @@
+@import "../../common/values.scss";
+
+
+
+
+.product-list__item {
+
+    margin: 0 10px 20px;
+    @include small-screen { margin: 0 0 20px 0; }
+    
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba($color: #000, $alpha: 0.1);
+
+
+    .product-list__item-details {
+        box-sizing: border-box; // Note: If this doesn't meet browser compatibility requirements, then I'd subtract padding size in width;
+        width: 100%;
+        padding: 1em 1.5ch;
+        margin: 0;
+
+        text-align: left;
+        background-color: rgba($color: #FFF, $alpha: 0.9);
+
+        position: relative; // included for absolutely positioned children
+
+        h3, p {
+            margin-top: 0em;
+            margin-bottom: 0.5em;
+        }
+
+        h3 {
+            font-size: 1em;
+            // color: $feature-color;
+        }
+        p {
+            font-size: 0.8em;
+        }
+
+
+        .product-list__price {
+            background-color: $feature-color;
+            color: #FFF;
+            font-size: 1em;
+            
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            
+            position: absolute;
+            top: -1em;
+            right: 0;
+            padding: 0.3em 2ch;
+        }
+    }
+
+
+    
+
+
+
+    .product-list__thumbnail-container {
+        overflow: hidden;
+
+        @include small-screen {
+            height: 90vw;
+        }
+
+        @include medium-screen {
+            height: 40vw;
+        }
+
+        @include large-screen {
+            height: 26vw;
+            max-height: 350px;
+        }
+    }
+
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: $easeOutExpo;
+    
+
+}
+
+
+.product-list__item:hover {
+    transform: scale(1.03);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: $easeOutExpo;
+}
