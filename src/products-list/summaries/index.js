@@ -20,12 +20,10 @@ export function Summaries(props) {
 	}, 0);
 
 
-	// Get the number of valid items
-	// TO DO: This isn't reporting the correct number
-	let trueLength = items.reduce( (runningTotal, item) => {
-		console.log(item.price);
-		if(item.price !== null)	return runningTotal + 1;
-	}, 0);
+	let trueLength = 0;
+	for( let k=0; k < items.length; k++ ){
+		if(items[k].price !== null)		trueLength++;
+	}
 
 	const average = total/trueLength;
 

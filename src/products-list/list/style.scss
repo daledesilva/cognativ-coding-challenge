@@ -11,6 +11,11 @@
 $small-medium-width: 414px;
 $medium-large-width: 600px;
 
+
+$easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+
+
+
 @mixin small-screen {
     @media (max-width: #{$small-medium-width - 1px}) {
       @content;
@@ -28,6 +33,9 @@ $medium-large-width: 600px;
       @content;
     }
 }
+
+
+
 
 ///////////
 
@@ -144,8 +152,20 @@ $medium-large-width: 600px;
                 }
             }
 
+
+            transition-property: transform;
+            transition-duration: 0.5s;
+            transition-timing-function: $easeOutExpo;
             
 
+        }
+
+
+        .product-list__item:hover {
+            transform: scale(1.03);
+            transition-property: transform;
+            transition-duration: 0.5s;
+            transition-timing-function: $easeOutExpo;
         }
 
     }

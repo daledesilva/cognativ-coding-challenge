@@ -1,5 +1,8 @@
 
 
+$easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+$easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
+
 
 .product-list__page-buttons {
     position: fixed;
@@ -17,8 +20,8 @@
         border-radius: 50%;
         width: 4em;
         height: 4em;
-
         margin-left: 0.5ch;
+        cursor: pointer;
 
         &.page-buttons__previous {
             // position: absolute;
@@ -30,10 +33,35 @@
             // right: 10px;
             // bottom: 0;
         }
+        
+        &:hover {
+            background-color: #E56D83;
+            color: #FFF;
+            transform: scale(1.1);
+
+            transition-property: transform;
+            transition-duration: 0.5s;
+            transition-timing-function: $easeOutExpo;
+        }
+
+        &:active {
+            background-color: #E56D83;
+            color: #FFF;
+            transform: scale(0.7);
+
+            transition-property: transform;
+            transition-duration: 0.5s;
+            transition-timing-function: $easeOutExpo;
+        }
 
         &:disabled {
             opacity: 0.5;
+            background-color: #333;
+            color: #999;
             transform: scale(0.8);
+            cursor: auto;
+
+            
         }
     }
 
