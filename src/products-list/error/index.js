@@ -9,7 +9,6 @@ export function Error(props) {
 	} = props;
 
 
-	// return <div>Error: {error.message}</div>;
-	return "error";
+	return <div>Error: {error.message}</div>;
 
 }

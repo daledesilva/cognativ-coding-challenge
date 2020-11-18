@@ -1,3 +1,38 @@
+// @use "../../common/values.scss";
+
+
+
+
+
+// These would usually be imported from a common values file
+// TO DO: Move them
+////////////////////////////////////////////////////////////
+
+$small-medium-width: 414px;
+$medium-large-width: 600px;
+
+@mixin small-screen {
+    @media (max-width: #{$small-medium-width - 1px}) {
+      @content;
+    }
+}
+
+@mixin medium-screen {
+    @media (min-width: #{$small-medium-width}) and (max-width: #{$medium-large-width - 1px}) {
+      @content;
+    }
+}
+
+@mixin large-screen {
+    @media (min-width: #{$medium-large-width}) {
+      @content;
+    }
+}
+
+///////////
+
+
+
 
 
 
@@ -13,8 +48,6 @@
 
 
     .product-list__item-container {
-        // Testing vaues
-        // background-color: blue;
 
         // remove list styling
         list-style-type:none;
@@ -25,14 +58,16 @@
         flex-grow: 0;
 
         
-        @media (max-width: 550px) { // TO DO: This is the wrong value
+        @include small-screen {
             flex-basis: 100%;
         }
-        @media (min-width: 550px) and (max-width: 599px) {
+
+        @include medium-screen {
             flex-basis: 200px;
             min-width: 50%;
         }
-        @media (min-width: 600px) {
+
+        @include large-screen {
             flex-basis: 200px;
             min-width: 33%;
         }
@@ -40,57 +75,54 @@
 
 
         .product-list__item {
-            // Testing vaues
-            // background-color: red;
-
-            // max-width: 150px;
-            height: 150px;
 
             margin: 0 20px 20px 0;
-            @media (max-width: 550px) { margin: 0 0 20px 0; }
+            @include small-screen { margin: 0 0 20px 0; }
             
             overflow: hidden;
             border-radius: 3px;
-
-            position: relative;
-            z-index: 1;
-
             box-shadow: 0 3px 6px rgba($color: #000, $alpha: 0.1);
 
 
-            h3 {
-                position: absolute;
-                bottom: 0;
+            .product-list__item-details {
                 width: 100%;
-
-                padding: 0.5ch 1.5ch;
+                padding: 1em 1.5ch;
                 margin: 0;
+
                 text-align: left;
                 background-color: rgba($color: #FFF, $alpha: 0.9);
                 font-size: 0.8em;
                 font-weight: 400;
+
+                position: relative; // included for absolutely positioned children
+
+                h3, p {
+                    margin-top: 0em;
+                    margin-bottom: 0.5em;
+                }
+
+
+                .product-list__price {
+                    position: absolute;
+                    top: -1em;
+                    right: -80%;
+                    width: 100%;
+                    background-color: #333;
+                    border-radius: 3px;
+                    padding: 0.5ch;
+                    font-size: 0.7em;
+                    color: #FFF;
+                }
             }
 
 
-            .product-list__price {
-                position: absolute;
-                bottom: 1.5em;
-                right: -70%;
-                width: 100%;
-                background-color: #333;
-                border-radius: 3px;
-                padding: 0.5ch;
-                font-size: 0.7em;
-                color: #FFF;
-            }
+            
 
 
 
             .product-list__thumbnail-container {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -1;
+                overflow: hidden;
+                max-height: 150px;
             }
 
             

@@ -26,8 +26,8 @@ export function List(props) {
 					<li className="product-list__item-container">
 	
 						<div className="product-list__item">
-							<h3>{parseTitle(item.title)}</h3>
-							<div className="product-list__price">{parsePrice(item.price)}</div>
+
+
 							<div className="product-list__thumbnail-container">
 								<img
 									src = {item.image}
@@ -35,6 +35,17 @@ export function List(props) {
 									alt = {item.description}
 								/>
 							</div>
+
+							<div className="product-list__item-details">
+								<h3>
+									{parseTitle(item.title)}
+								</h3>
+								<div className="product-list__price">{parsePrice(item.price)}</div>
+								<p>{item.description}</p>
+							</div>
+
+
+							
 						</div>
 	
 					</li>
