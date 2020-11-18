@@ -23,12 +23,12 @@ export function List(props) {
 
 				item.price !== null && (
 
-					<li className="item-container">
+					<li className="product-list__item-container">
 	
-						<div className="item">
+						<div className="product-list__item">
 							<h3>{parseTitle(item.title)}</h3>
-							<div className="price">{parsePrice(item.price)}</div>
-							<div className="thumbnail-container">
+							<div className="product-list__price">{parsePrice(item.price)}</div>
+							<div className="product-list__thumbnail-container">
 								<img
 									src = {item.image}
 									width = "100%"
