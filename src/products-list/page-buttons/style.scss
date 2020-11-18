@@ -1,7 +1,5 @@
+@import "../../common/values.scss";
 
-
-$easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
-$easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
 
 
 .product-list__page-buttons {
@@ -35,7 +33,7 @@ $easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
         }
         
         &:hover {
-            background-color: #E56D83;
+            background-color: $feature-color;
             color: #FFF;
             transform: scale(1.1);
 
@@ -45,7 +43,7 @@ $easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
         }
 
         &:active {
-            background-color: #E56D83;
+            background-color: $feature-color;
             color: #FFF;
             transform: scale(0.7);
 

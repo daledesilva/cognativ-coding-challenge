@@ -1,43 +1,9 @@
-// @use "../../common/values.scss";
+@import "../../common/values.scss";
 
 
 
 
 
-// These would usually be imported from a common values file
-// TO DO: Move them
-////////////////////////////////////////////////////////////
-
-$small-medium-width: 414px;
-$medium-large-width: 600px;
-
-
-$easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
-
-
-
-@mixin small-screen {
-    @media (max-width: #{$small-medium-width - 1px}) {
-      @content;
-    }
-}
-
-@mixin medium-screen {
-    @media (min-width: #{$small-medium-width}) and (max-width: #{$medium-large-width - 1px}) {
-      @content;
-    }
-}
-
-@mixin large-screen {
-    @media (min-width: #{$medium-large-width}) {
-      @content;
-    }
-}
-
-
-
-
-///////////
 
 
 
