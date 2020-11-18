@@ -13,12 +13,22 @@ export function Summaries(props) {
 	} = props;
 
 
-	// TO DO: Average needs to account for nulls
+	
 
 	const total = items.reduce( (runningTotal, item) => {
-		return runningTotal + item.price
+		return runningTotal + item.price;
 	}, 0);
-	const average = total/items.length;
+
+
+	// Get the number of valid items
+	// TO DO: This isn't reporting the correct number
+	let trueLength = items.reduce( (runningTotal, item) => {
+		console.log(item.price);
+		if(item.price !== null)	return runningTotal + 1;
+	}, 0);
+
+	const average = total/trueLength;
+
 
 
 	return (

@@ -19,11 +19,14 @@ export function List(props) {
 	return (
 			
 		<ul className="product-list">
-			{items.map( item => (
+			{items.map( (item, itemIndex) => (
 
 				item.price !== null && (
 
-					<li className="product-list__item-container">
+					<li
+						key = {itemIndex}	// Note: This should be replaced with a unique id if list ever supports reordering
+						className="product-list__item-container"
+						>
 	
 						<div className="product-list__item">
 

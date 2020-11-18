@@ -3,7 +3,7 @@
 
 .product-list__summaries {
 
-    font-size: 0.7em;
+    
     text-align: right;
     padding: 1em;
     background-color: #555;
@@ -19,7 +19,13 @@
     
 
     .summaries__label {
-        font-size: 0.5em;
+        font-size: 0.8em;
+        font-weight: 400;
+    }
+
+    .summaries__value {
+        font-size: 1em;
+        font-weight: 600;
     }
     
 }
