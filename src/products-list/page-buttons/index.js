@@ -1,5 +1,6 @@
 
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import './style.scss';
 
 
@@ -24,7 +25,7 @@ export function PageButtons(props) {
 				onClick = { onPreviousClick }
 				disabled = { onPreviousClick ? false : true }
 				>
-				&lt;
+					<FontAwesomeIcon icon={faChevronLeft} />
 			</button>
 
 			<button
@@ -32,7 +33,7 @@ export function PageButtons(props) {
 				onClick = {onNextClick}
 				disabled = { onNextClick ? false : true }
 				>
-				&gt;
+					<FontAwesomeIcon icon={faChevronRight} />
 			</button>
 
 		</div>
