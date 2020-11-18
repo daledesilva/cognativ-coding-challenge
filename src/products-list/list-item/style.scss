@@ -31,7 +31,7 @@
 
         h3 {
             font-size: 1em;
-            // color: $feature-color;
+            color: $feature-color;
         }
         p {
             font-size: 0.8em;
@@ -39,7 +39,7 @@
 
 
         .product-list__price {
-            background-color: $feature-color;
+            background-color: #333;
             color: #FFF;
             font-size: 1em;
             
@@ -50,6 +50,7 @@
             top: -1em;
             right: 0;
             padding: 0.3em 2ch;
+            z-index: 2;
         }
     }
 
@@ -73,6 +74,8 @@
             height: 26vw;
             max-height: 350px;
         }
+
+        position: relative; // for absolutely positioned children
     }
 
 
@@ -89,4 +92,58 @@
     transition-property: transform;
     transition-duration: 0.5s;
     transition-timing-function: $easeOutExpo;
+}
+
+
+
+
+.loading-cover {
+    background-color: $feature-color;
+    color: #FFF;
+    font-size: 0.8em;
+
+    position: absolute;
+    top: 0%;  
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.content-ready {
+
+    .loading-cover {
+        top: 100%; 
+        transition-property: top;
+        transition-duration: 1.5s;
+        transition-timing-function: $easeInOutQuint;
+    }
+
+    .product-list__item-details {
+    
+        h3 {
+            color: #000;
+
+            transition-property: color;
+            transition-duration: 1.5s;
+            transition-timing-function: $easeInOutQuint;
+        }
+
+        .product-list__price {
+            background-color: $feature-color;
+            color: #FFF;
+
+            transition-property: background-color, color;
+            transition-delay: 1;
+            transition-duration: 1.5s;
+            transition-timing-function: $easeInOutQuint;
+        }
+
+    }
+
 }

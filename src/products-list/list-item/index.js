@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {parsePrice, parseTitle} from "../../common/display-formatting";
 import './style.scss';
 
@@ -9,13 +11,10 @@ export function ListItem(props) {
 		item
 	} = props;
 
+    const [contentReady, setContentReady] = useState(false);
 
 
 
-
-	// revealItem = (key) => {
-		
-	// }
 
 
 	
@@ -23,16 +22,27 @@ export function ListItem(props) {
 
 	return (
 			
-		<div className="product-list__item">
+        <div
+            className={[
+                "product-list__item",
+                contentReady ? "content-ready" : ""
+            ].join(" ")}
+            >
 
 
             <div className="product-list__thumbnail-container">
+
+                <div className="loading-cover">
+                    Loading image
+                </div>
+
                 <img
                     src = {item.image}
                     width = "100%"
                     alt = {item.description}
-                    // onLoad = { () => revealItem(item.key)}
+                    onLoad = { () => setContentReady(true) }
                 />
+
             </div>
 
             <div className="product-list__item-details">
