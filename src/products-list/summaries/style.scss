@@ -1,0 +1,25 @@
+
+
+
+.product-list__summaries {
+
+    font-size: 0.7em;
+    text-align: right;
+    padding: 1em;
+    background-color: #555;
+    color: #FFF;
+    border-radius: 3px;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    z-index: 2;
+
+    
+
+    .summaries__label {
+        font-size: 0.5em;
+    }
+    
+}

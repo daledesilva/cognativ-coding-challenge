@@ -1,0 +1,39 @@
+
+
+
+.product-list__page-buttons {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+    z-index: 1;
+
+    text-align: right;
+
+    button {
+        border-style: none;
+        background-color: #333;
+        color: #999;
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+
+        &.page-buttons__previous {
+            // position: absolute;
+            // left: 10px;
+            // bottom: 0;
+        }
+        &.page-buttons__next {
+            // position: absolute;
+            // right: 10px;
+            // bottom: 0;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+
+
+    
+}
